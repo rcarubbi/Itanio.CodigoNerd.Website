@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AssuntoDestaqueViewModel>
+@{
+    var indice = 1;
+}
+<div class="zodiac_box">
+    <div class="container">
+
+        @foreach (var item in Model)
+        {
+            <div class="box box@(indice) wow fadeInUp" data-wow-delay="0.3s">
+                <div><p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p><a href="#" class="btn-default btn5">leia mais</a></div>
+                <figure><img src="~/content/img/page1_icon@(indice).png" alt=""></figure>
+                <strong>@item.Nome</strong>
+            </div>
+            indice++;
+        }
+    </div>
+</div>

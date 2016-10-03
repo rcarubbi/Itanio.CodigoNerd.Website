@@ -1,0 +1,19 @@
+﻿@model HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+ <div class="main">
+    <!--header-->
+    <div class="container">
+        @Html.Partial("_Menu")
+        <div class="logo_box">
+            <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="~/Content/img/logo.png" alt="logo"></a></h1>
+            @Html.Partial("_BuscaContextual")
+        </div>
+    </div>
+     @Html.Partial("_AssuntosDestaque", Model.AssuntosDestaque)
+</div>
+@Html.Partial("_BarraResumos")
+@Html.Partial("_CanaisSociais")
+@Html.Partial("_Inscricao")
+@Html.Partial("_Sobre")
