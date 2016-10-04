@@ -31,6 +31,7 @@ namespace Itanio.CodigoNerd.WebSite.WebUI
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/fonts.css",
                       "~/Content/bootstrap.css",
                       "~/Content/style.css",
                       "~/Content/animate.css",
