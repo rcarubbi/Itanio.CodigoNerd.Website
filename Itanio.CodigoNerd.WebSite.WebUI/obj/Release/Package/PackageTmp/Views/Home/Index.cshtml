@@ -18,3 +18,24 @@
 @Html.Partial("_Inscricao")
 @Html.Partial("_Sobre")
 @Html.Partial("_Rodape")
+
+
+@section scripts {
+    <script src="~/Scripts/leads.js" data-nome="leads.js" 
+    data-ambiente="producao" 
+    data-projeto="DB82C626-927E-E611-9BB9-3C4A92F08737" 
+    data-controle-email-contato="email-contato" 
+    data-controle-criar-contato="enviar-contato">
+    </script>
+    <script>
+        $(function(){
+            $("body").on("leads.contatoCriado", function(){
+                $(".success").show();
+                $("#email-contato").val("");
+            });
+
+
+         
+        });
+    </script>
+}

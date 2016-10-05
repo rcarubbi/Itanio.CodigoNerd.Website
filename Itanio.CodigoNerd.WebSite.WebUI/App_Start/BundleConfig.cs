@@ -14,9 +14,8 @@ namespace Itanio.CodigoNerd.WebSite.WebUI
                         "~/Scripts/jquery-migrate-1.2.1.min.js",
                         "~/Scripts/jquery.easing.1.3.js",
                         "~/Scripts/jquery.mobilemenu.js",
-                        "~/Scripts/jquery.equalheights.js",
-                        "~/Scripts/sForm.js"
-                        ));
+                        "~/Scripts/jquery.equalheights.js"
+            ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

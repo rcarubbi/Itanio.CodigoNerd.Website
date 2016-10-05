@@ -14,7 +14,7 @@
                 </p>
             </div>
         </div>
-        <div class="row wow fadeInRightBig animated"  data-wow-offset="200">
+        <div class="row wow fadeInRightBig animated" data-wow-offset="200">
             <div class="col-md-6 subscrible-panel-left">
                 <p>
                     Nosso conteúdo é muito relevante, e queremos
@@ -23,10 +23,14 @@
                 </p>
             </div>
             <div class="col-md-6 subscrible-panel-right">
-                <form id="newsletter" accept-charset="utf-8">
-                    <input type="email" placeholder="Digite aqui o seu melhor e-mail">
-                    <a href="#" data-type="submit">Enviar</a>
-                </form>
+                <div id="newsletter">
+                    <div class="success" style="display:none">Sua solicitação foi enviada</div>
+                    <label class="email">
+                        <input type="email" id="email-contato" placeholder="Digite aqui o seu melhor e-mail">
+                        <span class="error">*Este não é um email valido.</span>
+                    </label>
+                    <a href="javascript:void(0);" id="enviar-contato">Enviar</a>
+                </div>
             </div>
         </div>
     </div>

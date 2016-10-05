@@ -1,6 +1,6 @@
 //----Include-Function----
 function include(url){ 
-  document.write('<script src="scripts/'+ url + '"></script>'); 
+  document.write('<script src="/scripts/'+ url + '"></script>'); 
   return false ;
 }
 
@@ -8,8 +8,8 @@ function include(url){
 //year sccript
 
 var currentYear = (new Date).getFullYear();
-$(document).ready(function() {
-$("#copyright-year").text( (new Date).getFullYear() );
+$(document).ready(function () {
+    $("#copyright-year").html("\u00A9 2012-" + (new Date).getFullYear() + ", feito com <i class=\"fa fa-heart heart\"></i> por <a href=\"http://www.itanio.com.br\" target=\"_blank\">Itanio</a>");
 });
 
 /*========================================================*/
@@ -19,14 +19,13 @@ include('device.min.js');
 
 /* Stick up menu
 ========================================================*/
-/*include('tmstickup.js');
+include('tmstickup.js');
 $(window).load(function() { 
   if ($('html').hasClass('desktop')) {
-      $('#stuck_container').TMStickUp({
-      })
+      $('#stuck_container').tmStickUp({ active: true});
   }  
-});*/
-include('superfish.js');
+});
+//include('superfish.js');
 /* DEVICE.JS AND SMOOTH SCROLLIG
 ========================================================*/
 include('jquery.mousewheel.min.js');
@@ -58,9 +57,10 @@ $(function () {
   $().UItoTop({ easingType: 'easeOutQuart' });
 });
 
-jQuery(function(){
+jQuery(function () {
     jQuery('.sf-menu').mobileMenu({ defaultText: "-- Selecione --" });
-    })
+});
+
 $(function(){
 // IPad/IPhone
   var viewportmeta = document.querySelector && document.querySelector('meta[name="viewport"]'),

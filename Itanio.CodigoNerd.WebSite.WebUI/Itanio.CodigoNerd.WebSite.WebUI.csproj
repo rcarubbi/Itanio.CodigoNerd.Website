@@ -248,6 +248,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\leads.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -255,6 +256,7 @@
     <Content Include="Scripts\stellar\jquery.stellar.js" />
     <Content Include="Scripts\superfish.js" />
     <Content Include="Scripts\tm-scripts.js" />
+    <Content Include="Scripts\tmstickup.js" />
     <Content Include="Scripts\wow\device.min.js" />
     <Content Include="Scripts\wow\wow-spec.js" />
     <Content Include="Scripts\wow\wow.js" />
