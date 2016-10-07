@@ -19,6 +19,12 @@ namespace Itanio.CodigoNerd.WebSite.WebUI.Controllers
 
         }
 
-     
+        public ActionResult Busca(string termo = "") {
+            IContexto contexto = new Contexto();
+            SmartLMS.Dominio.Servicos.ServicoBuscaContextual servico = new SmartLMS.Dominio.Servicos.ServicoBuscaContextual(contexto, null);
+            var resultados = servico.Pesquisar(termo, 1, 20);
+            ViewBag.Termo = termo;
+            return View(resultados);
+        }
     }
 }

@@ -5,5 +5,7 @@ namespace Itanio.CodigoNerd.WebSite.WebUI.Models
     public class HomeViewModel
     {
         public IEnumerable<AssuntoDestaqueViewModel> AssuntosDestaque { get; set; }
+
+        public string Termo { get; set; }
     }
 }

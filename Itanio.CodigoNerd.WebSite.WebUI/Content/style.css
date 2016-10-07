@@ -1390,7 +1390,7 @@ nav.tm_navbar {
 ========================================================*/
 
 .sobre-titulo {
-    background: url(../Content/img/sobre-bg.jpg);
+    background: url(../Content/img/sobre-bg.jpg) no-repeat;
 }
 
     .sobre-titulo p {
@@ -1426,14 +1426,12 @@ nav.tm_navbar {
 }
 
     .sobre figure {
-        margin-top: 100px;
-        margin-left: -60px;
+        margin-top: 130px;
+       
     }
 
     .sobre .caixa-sobre {
         background-color: #af4988;
-        width: 75%;
-        margin: 10px 10px 10px 140px;
         height: 375px;
     }
 
@@ -1459,7 +1457,7 @@ nav.tm_navbar {
 
         .sobre .caixa-sobre::before {
             position: relative;
-            left: 88%;
+            left: 84%;
             top: 20px;
             width: 65px;
             height: 47px;

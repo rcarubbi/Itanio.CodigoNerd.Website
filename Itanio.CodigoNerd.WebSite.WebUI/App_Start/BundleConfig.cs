@@ -34,6 +34,7 @@ namespace Itanio.CodigoNerd.WebSite.WebUI
                       "~/Content/bootstrap.css",
                       "~/Content/style.css",
                       "~/Content/animate.css",
+                      "~/Content/search.css",
                       "~/Content/font-awesome.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/wow").Include(

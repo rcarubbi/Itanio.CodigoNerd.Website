@@ -177,6 +177,7 @@
     <Content Include="Content\img\top.png" />
     <Content Include="Content\img\vectorsbg.png" />
     <Content Include="Content\img\YouTube.png" />
+    <Content Include="Content\search.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -281,6 +282,7 @@
     <Content Include="Views\Home\_Inscricao.cshtml" />
     <Content Include="Views\Home\_Sobre.cshtml" />
     <Content Include="Views\Shared\_Rodape.cshtml" />
+    <Content Include="Views\Home\Busca.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -250,14 +250,19 @@ Itanio.Leads = (function (proxy) {
             }
     };
 
-    $private.validarFormulario = function (visitanteViewModel) {
-        //Expressão regular que valida os campos de e-mail
-        re = /^[\w-]+(\.[\w-]+)*@(([A-Za-z\d][A-Za-z\d-]{0,61}[A-Za-z\d]\.)+[A-Za-z]{2,6}|\[\d{1,3}(\.\d{1,3}){3}\])$/
 
+
+    $private.validateEmail = function(email) {
+        re = /^[\w-]+(\.[\w-]+)*@(([A-Za-z\d][A-Za-z\d-]{0,61}[A-Za-z\d]\.)+[A-Za-z]{2,6}|\[\d{1,3}(\.\d{1,3}){3}\])$/
+        return re.test(email);
+    }
+
+    $private.validarFormulario = function (visitanteViewModel) {
+      
         var erro = 0;
         var msg = "";
 
-        if (re.test($("#" + $private.IdControleEmail).val()) == 0) {
+        if ($private.validateEmail($("#" + $private.IdControleEmail).val()) == 0) {
             msg += "<li style='margin-bottom: 10px;font-size: 16px;'>E-mail Inválido</li>";
             erro = 1;
         }
@@ -410,8 +415,35 @@ Itanio.Leads = (function (proxy) {
                 userAgentInfo: navigator.userAgent,
                 idProjeto: $private.IdProjeto
             };
-            proxy.criarContato(contato).done($private.contatoCriado);
+
+            if ($private.validarFormularioContato(contato)) {
+                proxy.criarContato(contato).done($private.contatoCriado).fail($private.emailJaEnviado);
+            }
+            
         };
+
+        $private.emailJaEnviado = function() {
+            $private.exibirMensagem("<p>Seu e-mail já está inscrito", "Atenção");
+        }
+
+        $private.validarFormularioContato = function (contato) {
+
+            var erro = 0;
+            var msg = "";
+
+            if ($private.validateEmail(contato.email) == 0) {
+                msg += "<li style='margin-bottom: 10px;font-size: 16px;'>E-mail Inválido</li>";
+                erro = 1;
+            }
+ 
+
+            if (erro == 1) {
+                $private.exibirMensagem("<ul>" + msg + "</ul>", "Atenção");
+                return false;
+            }
+
+            return true;
+        }
 
         $private.contatoCriado = function(data) {
            $("body").trigger("leads.contatoCriado");
