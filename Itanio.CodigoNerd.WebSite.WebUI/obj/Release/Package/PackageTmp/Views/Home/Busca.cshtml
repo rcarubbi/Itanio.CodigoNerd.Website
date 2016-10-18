@@ -8,8 +8,8 @@
     <!--header-->
     <div class="container">
         @Html.Partial("_Menu")
-        <div class="logo_box wow animated zoomInDown">
-            <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img src="~/Content/img/logo.png" alt="logo"></a></h1>
+        <div class="logo_box">
+            <h1 class="navbar-brand navbar-brand_"><a href="~/"><img src="~/Content/img/logo.png" alt="logo"></a></h1>
             @Html.Partial("_BuscaContextual", termo)
         </div>
     </div>
@@ -18,7 +18,7 @@
 <div class="content indent">
     <!--content-->
     <div class="container">
-        <h2 class="indent">Resultados da busca:</h2>
+        <h2 class="indent">Resultados da busca para o termo '@termo':</h2>
         <div id="search-results">
             <ol class="search_list">
                 @foreach (SmartLMS.Dominio.Servicos.ResultadoBusca resultado in Model.Entities)
@@ -32,7 +32,13 @@
                     </li>
                     i++;
                 }
+
+
             </ol>
+            @if (Model.Count == 0)
+            {
+                <h4>Nenhum resultado encontrado para o termo <span class="search">'@termo'</span></h4>
+            }
         </div>
     </div>
 </div>

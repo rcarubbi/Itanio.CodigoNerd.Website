@@ -12,6 +12,8 @@ namespace Itanio.CodigoNerd.WebSite.WebUI.Controllers
 
         public ActionResult Index()
         {
+            return Redirect("Index.html");
+
             IContexto contexto = new Contexto();
             SmartLMS.Dominio.Repositorios.RepositorioAssunto repo = new SmartLMS.Dominio.Repositorios.RepositorioAssunto(contexto);
             var assuntos = repo.ListarAssuntos("", "Nome", 1).Entities.Union(repo.ListarAssuntos("", "Nome", 2).Entities);
@@ -26,5 +28,8 @@ namespace Itanio.CodigoNerd.WebSite.WebUI.Controllers
             ViewBag.Termo = termo;
             return View(resultados);
         }
+
+
+      
     }
 }

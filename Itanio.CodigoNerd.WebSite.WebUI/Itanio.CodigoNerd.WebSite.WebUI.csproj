@@ -137,6 +137,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MaterialApoioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,6 +178,7 @@
     <Content Include="Content\img\top.png" />
     <Content Include="Content\img\vectorsbg.png" />
     <Content Include="Content\img\YouTube.png" />
+    <Content Include="Content\MaterialApoio.css" />
     <Content Include="Content\search.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -233,6 +235,7 @@
     <Content Include="fonts\Roboto-regular\Roboto-regular.woff" />
     <Content Include="fonts\Roboto-regular\Roboto-regular.woff2" />
     <None Include="Properties\PublishProfiles\Homologacao.pubxml" />
+    <None Include="Properties\PublishProfiles\Producao.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\device.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -250,6 +253,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\leads.js" />
+    <Content Include="Scripts\materialapoio.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -283,6 +287,18 @@
     <Content Include="Views\Home\_Sobre.cshtml" />
     <Content Include="Views\Shared\_Rodape.cshtml" />
     <Content Include="Views\Home\Busca.cshtml" />
+    <Content Include="Views\MaterialApoio\Index.cshtml" />
+    <Content Include="Views\MaterialApoio\Obrigado.cshtml" />
+    <Content Include="Views\MaterialApoio\Download.cshtml" />
+    <Content Include="Views\MaterialApoio\_Depoimentos1.cshtml" />
+    <Content Include="Views\MaterialApoio\_Depoimentos2.cshtml" />
+    <Content Include="Views\MaterialApoio\_Depoimentos4.cshtml" />
+    <Content Include="Views\MaterialApoio\_Depoimentos3.cshtml" />
+    <Content Include="Views\MaterialApoio\_Banner1.cshtml" />
+    <Content Include="Views\MaterialApoio\_Banner2.cshtml" />
+    <Content Include="Views\MaterialApoio\_Banner3.cshtml" />
+    <Content Include="Views\MaterialApoio\_Depoimentos5.cshtml" />
+    <Content Include="Views\MaterialApoio\_Rodape.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

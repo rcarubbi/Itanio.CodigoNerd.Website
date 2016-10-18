@@ -87,4 +87,3 @@ C:\Users\Itanio-PC24\Source\Repos\Itanio.Codigonerd.Website\Itanio.CodigoNerd.We
 C:\Users\Itanio-PC24\Source\Repos\Itanio.Codigonerd.Website\Itanio.CodigoNerd.WebSite.WebUI\bin\Newtonsoft.Json.xml
 C:\Users\Itanio-PC24\Source\Repos\Itanio.Codigonerd.Website\Itanio.CodigoNerd.WebSite.WebUI\obj\Debug\Itanio.CodigoNerd.WebSite.WebUI.dll
 C:\Users\Itanio-PC24\Source\Repos\Itanio.Codigonerd.Website\Itanio.CodigoNerd.WebSite.WebUI\obj\Debug\Itanio.CodigoNerd.WebSite.WebUI.pdb
-C:\Users\Itanio-PC24\Source\Repos\Itanio.Codigonerd.Website\Itanio.CodigoNerd.WebSite.WebUI\obj\Debug\Itanio.CodigoNerd.WebSite.WebUI.csprojResolveAssemblyReference.cache
