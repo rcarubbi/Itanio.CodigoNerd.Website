@@ -12,7 +12,7 @@ namespace Itanio.CodigoNerd.WebSite.WebUI.Controllers
 
         public ActionResult Index()
         {
-            return Redirect("Index.html");
+           // return Redirect("Index.html");
 
             IContexto contexto = new Contexto();
             SmartLMS.Dominio.Repositorios.RepositorioAssunto repo = new SmartLMS.Dominio.Repositorios.RepositorioAssunto(contexto);
