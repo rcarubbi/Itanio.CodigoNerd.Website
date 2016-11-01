@@ -459,9 +459,11 @@ Itanio.Leads = (function (proxy) {
         };
 
         $private.IdArquivo = $private.getQueryString("IdArquivo");
-        proxy.obterDescricaoArquivo($private.IdArquivo).done(function (data) {
-            $(".leads-descricao-arquivo").html(data);
-        });
+        if ($private.IdArquivo !== null) {
+            proxy.obterDescricaoArquivo($private.IdArquivo).done(function (data) {
+                $(".leads-descricao-arquivo").html(data);
+            });
+        }
 
 
         if (!$private.IdControleEmail)

@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Carubbi.DiffAnalyzer</name>
+    </assembly>
+    <members>
+        <member name="T:Carubbi.DiffAnalyzer.DiffAnalyzer">
+            <summary>
+            Classe responsável por analizar e apontar as diferenças entre os valores de dois objetos da mesma classe
+            </summary>
+        </member>
+        <member name="M:Carubbi.DiffAnalyzer.DiffAnalyzer.#ctor">
+            <summary>
+            Cria um analisador de diferenças de objetos até o 3o. nível de profundidade
+            </summary>
+        </member>
+        <member name="M:Carubbi.DiffAnalyzer.DiffAnalyzer.#ctor(System.Int32,Carubbi.DiffAnalyzer.AnalyzerBehavior)">
+            <summary>
+            Cria um analisador de diferenças de objetos definindo a profundidade
+            </summary>
+            <param name="depth">Profundidade das agregações que devem ser analisadas</param>
+        </member>
+        <member name="M:Carubbi.DiffAnalyzer.DiffAnalyzer.Compare(System.Object,System.Object)">
+            <summary>
+            Compara duas instâncias da mesma classe
+            </summary>
+            <typeparam name="T">Tipo da classe a ser comparada</typeparam>
+            <param name="oldInstance">Primeira instância</param>
+            <param name="newInstance">Segunda instância</param>
+            <returns>Lista de comparações com o nome da propriedade, valor antigo e novo valor bem como o status da comparação (Adicionado, Removido, Alterado, Não modificado, e desconhecido</returns>
+        </member>
+        <member name="M:Carubbi.DiffAnalyzer.DiffAnalyzer.Compare``1(``0,``0,System.Func{Carubbi.DiffAnalyzer.DiffComparison,System.Boolean})">
+            <summary>
+            Compara duas instâncias da mesma classe
+            </summary>
+            <typeparam name="T">Tipo da classe a ser comparada</typeparam>
+            <param name="oldInstance">Primeira instância</param>
+            <param name="newInstance">Segunda instância</param>
+            <param name="predicate">predicate para ser usado como filtro na expressão linq Where</param>
+            <returns>Lista de comparações com o nome da propriedade, valor antigo e novo valor bem como o status da comparação (Adicionado, Removido, Alterado, Não modificado, e desconhecido</returns>
+        </member>
+        <member name="M:Carubbi.DiffAnalyzer.DiffAnalyzer.LoadAggregationTypesRecursive(System.Type,System.Object,System.Object)">
+            <summary>
+            Ponto de partida para a recursão que realiza a análise dos objetos
+            </summary>
+            <param name="root">Tipo principal (raiz da recursão)</param>
+            <param name="oldInstance">Primeira instância</param>
+            <param name="newInstance">Segunda instância</param>
+            <returns>Lista de comparações com o nome da propriedade, valor antigo e novo valor bem como o status da comparação (Adicionado, Removido, Alterado, Não modificado, e desconhecido</returns>
+        </member>
+        <member name="M:Carubbi.DiffAnalyzer.DiffAnalyzer.LoadTypeNode(System.Type,System.Object,System.Object,System.Collections.Generic.List{Carubbi.DiffAnalyzer.DiffComparison})">
+            <summary>
+            Analiza a estrutura de um tipo bem como os valores de duas instancias
+            </summary>
+            <param name="type">Tipo a ser analisado</param>
+            <param name="oldInstance">Primeira instância</param>
+            <param name="newInstance">Segunda instância</param>
+            <param name="comparisons">Lista de comparações com o nome da propriedade, valor antigo e novo valor bem como o status da comparação (Adicionado, Removido, Alterado, Não modificado, e desconhecido</param>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.MockClasses.UF">
+            <summary>
+            Classe de negócio fictícia para testar o componente
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.MockClasses.Cidade">
+            <summary>
+            Classe de negócio fictícia para testar o componente
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.MockClasses.Endereco">
+            <summary>
+            Classe de negócio fictícia para testar o componente
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.MockClasses.Telefone">
+            <summary>
+            Classe de negócio fictícia para testar o componente
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.MockClasses.TipoTelefone">
+            <summary>
+            Classe de negócio fictícia para testar o componente
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.MockClasses.Usuario">
+            <summary>
+            Classe de negócio fictícia para testar o componente
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.NodeLoaders.NodeLoaderBase">
+            <summary>
+            Responsável por interpretar os valores em um determinado nível na árvore de objetos
+            <example>
+            Dadas as classes abaixo:
+            <code>
+            class Cliente 
+            {
+                public Endereco EnderecoResidencial
+                {
+                    get;
+                    set;
+                }
+                
+                public string Nome
+                {
+                    get;
+                    set;
+                }
+             }
+             
+             class Endereco
+             {
+                public string Logradouro
+                {
+                get;
+                set;
+                }
+                
+                public int? Numero
+                {
+                    get;
+                    set;
+                }
+            }
+            </code>
+            <para>Considere duas instancias de Cliente sendo comparadas. Durante a comparação, os objetos são carregados através de NodeLoaders onde para cada nó da árvore de objetos existe um NodeLoader específico para interpretá-lo.
+            Cliente -> DefaultNodeLoader
+            Cliente.Endereco -> DefaultNodeLoader
+            Cliente.Endereco.Logradouro -> DefaultNodeLoader
+            Cliente.Endereco.Numero -> NullablePrimitiveNodeLoader
+            Cliente.Nome -> DefaultNodeLoader
+            </para>
+            </example>
+            </summary>
+        </member>
+        <member name="T:Carubbi.DiffAnalyzer.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.DiffState_Added">
+            <summary>
+              Looks up a localized string similar to Added.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.DiffState_Deleted">
+            <summary>
+              Looks up a localized string similar to Deleted.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.DiffState_Modified">
+            <summary>
+              Looks up a localized string similar to Modified.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.DiffState_NotChanged">
+            <summary>
+              Looks up a localized string similar to Not Changed.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.DiffState_Unknow">
+            <summary>
+              Looks up a localized string similar to Unknow.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.NewValueTextField">
+            <summary>
+              Looks up a localized string similar to New Value.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.OldValueTextField">
+            <summary>
+              Looks up a localized string similar to Old Value.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.PropertyNameTextField">
+            <summary>
+              Looks up a localized string similar to Property Name.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.Resources.StatusTextField">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:Carubbi.DiffAnalyzer.UI.DiffComparisonViewer.StateFilter">
+            <summary>
+            <para>Propriedade BitWise que recebe os estados que deverão ser exibidos no vizualizador, </para>
+            <para>caso vazio ele assume que todos os estados devem ser exibidos como padrão</para>
+            </summary>
+        </member>
+    </members>
+</doc>
