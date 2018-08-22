@@ -1,5 +1,7 @@
-﻿using SmartLMS.Dominio.Entidades.Conteudo;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SmartLMS.Domain.Entities;
+using SmartLMS.Domain.Entities.Content;
 
 namespace Itanio.CodigoNerd.WebSite.WebUI.Models
 {
@@ -7,19 +9,16 @@ namespace Itanio.CodigoNerd.WebSite.WebUI.Models
     {
         public string Nome { get; set; }
 
-        public static IEnumerable<AssuntoDestaqueViewModel> FromEntityList(IEnumerable<Assunto> lista)
+        public static IEnumerable<AssuntoDestaqueViewModel> FromEntityList(IEnumerable<Subject> lista)
         {
-            foreach (var item in lista)
-            {
-                yield return FromEntity(item);
-            }
+            return lista.Select(FromEntity);
         }
 
-        private static AssuntoDestaqueViewModel FromEntity(Assunto item)
+        private static AssuntoDestaqueViewModel FromEntity(ISearchResult item)
         {
             return new AssuntoDestaqueViewModel
             {
-                Nome = item.Nome
+                Nome = item.Name
             };
         }
     }

@@ -1,4 +1,4 @@
-﻿@model Carubbi.GenericRepository.PagedListResult<SmartLMS.Dominio.Servicos.ResultadoBusca>
+﻿@model Carubbi.GenericRepository.PagedListResult<SmartLMS.Domain.Services.SearchResult>
 @{
     ViewBag.Title = "Resultados de busca";
     string termo = ViewBag.Termo != null ? ViewBag.Termo.ToString() : string.Empty;
@@ -21,12 +21,12 @@
         <h2 class="indent">Resultados da busca para o termo '@termo':</h2>
         <div id="search-results">
             <ol class="search_list">
-                @foreach (SmartLMS.Dominio.Servicos.ResultadoBusca resultado in Model.Entities)
+                @foreach (var resultado in Model.Entities)
                 {
                     <li class="wow fadeInLeft" data-wow-delay="0.@(i)s">
                         <h4 class="search_title">
                             <a target="_blank" href="http://www.codigonerd.net/smartlms/@resultado.Link" class="search_link">
-                                <i class="fa @resultado.Icone"></i> @resultado.Descricao
+                                <i class="fa @resultado.Icon"></i> @resultado.Description
                             </a>
                         </h4>
                     </li>
